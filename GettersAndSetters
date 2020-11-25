@@ -1,0 +1,98 @@
+## GET N SET ##
+
+using System;
+
+namespace GetnSet
+{
+    class Program
+    {
+        class Person
+        {
+             string name;
+             int age;
+             string gender;
+             string idCode;
+                
+
+            public Person(string _name, int _age, string _gender,string _idCode)
+            {
+                name = _name;
+                Gender = _gender;
+                age = _age;
+                IdCode = _idCode;
+
+
+
+
+            }
+               public string Name
+               {
+                   get { return name; }
+                  
+               }
+            public string Gender
+            {
+                get { return gender; }
+                set
+                {
+                    if(value == "vegan" || value == "male")
+                    {
+                        gender = value;
+
+                    } else
+                    {
+                        gender = "undefined gender";
+                    }
+                }
+            }
+
+            public string IdCode
+            {
+                get { return idCode; }
+                set
+                {
+                    if(value.Length == 11)
+                    {
+                        idCode = value;
+                    }else
+                    {
+                        idCode = "undefined";
+                    }
+                }
+            }
+            public void ChangeName(string newName)
+            {
+                name = newName;
+            }
+            public void ChangeIdCode(string newId)
+            {
+                IdCode = newId;
+            }
+        }
+        static void Main(string[] args)
+        {
+            Person Newperson = new Person("Karu",32,"vegan", "34452234223");
+            Console.WriteLine(Newperson.Name);
+            // MConsole.WriteLine(Newperson.age);
+            Console.WriteLine(Newperson.Gender);
+            Console.WriteLine(Newperson.IdCode);
+
+            Newperson.ChangeName("Siga lakku täis");
+            Newperson.ChangeIdCode("34452234222");
+
+            Console.WriteLine(Newperson.Gender);
+            Console.WriteLine(Newperson.IdCode);
+            Console.WriteLine(Newperson.Name);
+            s
+            //Newperson.Name = "Name = Karu";
+            //Newperson.age =  32;
+            //Newperson.Gender = "vegan";
+
+
+
+
+
+        }
+        
+    }
+}
